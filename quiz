@@ -1,0 +1,40 @@
+# Quiz data stored in program memory
+quiz_data = [
+    {"question": "What is the capital of France?", "options": ["A. Berlin", "B. Madrid", "C. Paris", "D. Rome"], "answer": "C"},
+    {"question": "Who wrote 'Hamlet'?", "options": ["A. Charles Dickens", "B. William Shakespeare", "C. J.K. Rowling", "D. Leo Tolstoy"], "answer": "B"},
+    {"question": "Which planet is known as the Red Planet?", "options": ["A. Earth", "B. Venus", "C. Mars", "D. Jupiter"], "answer": "C"},
+    {"question": "What is the largest ocean on Earth?", "options": ["A. Atlantic", "B. Indian", "C. Arctic", "D. Pacific"], "answer": "D"},
+    {"question": "Who painted the Mona Lisa?", "options": ["A. Vincent Van Gogh", "B. Leonardo da Vinci", "C. Pablo Picasso", "D. Claude Monet"], "answer": "B"},
+    {"question": "Which gas do plants primarily use for photosynthesis?", "options": ["A. Oxygen", "B. Nitrogen", "C. Carbon Dioxide", "D. Methane"], "answer": "C"},
+    {"question": "What is the smallest unit of life?", "options": ["A. Organ", "B. Cell", "C. Tissue", "D. Molecule"], "answer": "B"},
+    {"question": "Who developed the theory of relativity?", "options": ["A. Isaac Newton", "B. Galileo Galilei", "C. Nikola Tesla", "D. Albert Einstein"], "answer": "D"},
+    {"question": "What is the longest river in the world?", "options": ["A. Amazon River", "B. Nile River", "C. Yangtze River", "D. Mississippi River"], "answer": "B"},
+    {"question": "Which element has the chemical symbol 'O'?", "options": ["A. Oxygen", "B. Osmium", "C. Oganesson", "D. Gold"], "answer": "A"}
+]
+
+# Function to run the quiz
+def run_quiz():
+    print("Welcome to the Quiz App!")
+    score = 0  # Score counter
+
+    for i, question in enumerate(quiz_data, start=1):
+        print(f"\nQuestion {i}: {question['question']}")
+        for option in question["options"]:
+            print(option)
+
+        # Get user input
+        user_answer = input("Enter your answer (A, B, C, D): ").strip().upper()
+
+        # Check the answer
+        if user_answer == question["answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {question['answer']}.")
+
+    # Show final score
+    print(f"\nQuiz completed! Your final score is: {score}/{len(quiz_data)}")
+
+# Run the quiz
+if __name__ == "__main__":
+    run_quiz()
